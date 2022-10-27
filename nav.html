@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    </head>
+
+    <script>
+        $('.profile').on('click',function() {
+            $('.form-container').fadeToggle();
+            $('.admin').fadeToggle();
+        });
+    </script>
+    
+    <style>
+        body { margin:0;}
+        nav {
+            margin:0;
+            padding:0;
+            position:fixed;
+            z-index:1;
+            background: rgb(255, 255, 255);
+            top:0;
+            left:0;
+            width:90px;
+            height:100vh;
+            box-shadow: 3px 1px 12px rgba(88, 88, 88, 0.15);
+            padding-top:25px;
+
+        }
+            nav a {
+                display:none !important;
+                visibility: hidden;
+                float: left; 
+            }
+
+            nav a.active {
+                background-color:#04AA6D;
+                color:white;
+            }
+
+            nav a:hover:not(.active) {
+                background-color:#555;
+                color:white;
+            }
+
+
+            nav img{
+                margin-top:10px;
+                padding: 25px 35px 25px 28px;
+                text-decoration: none;
+                font-size: 18px;
+                transition: 0.3s; 
+                width:28px;
+                cursor:pointer;
+            }
+
+            nav img:hover {
+                transform: scale(125%);
+            }
+
+        @media screen and (max-width: 900px) {
+            nav {
+                    width: 100%;
+                    min-width:550px;
+                    height: auto;
+                    position: fixed;
+                    padding:0;
+                    overflow:hidden;
+                }
+            nav img {
+                display:none;
+                visibility:hidden;
+            }
+            nav a {
+                display:inline-block !important;
+                visibility: visible;
+                padding:15px 15px 15px 15px;
+                text-decoration: none;
+                font-size: 16px;
+                font-family: bahnschrift;;
+                color:black;
+                display: block;
+                transition: 0.3s; 
+                cursor:pointer;
+                text-align:center;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            nav img {
+                text-align: center;
+                float: none;
+            }
+        }
+
+
+        .tooltiptext, .tooltiptext2, .tooltiptext3, .tooltiptext4 {
+            visibility: hidden;
+            width: 120px;
+            background-color: rgb(61, 61, 61);
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px 0;
+            opacity:.9;
+            font-family:arial;
+            margin-left:70px;
+            margin-top:-50px;
+
+            /* Position the tooltip */
+            position: absolute;
+            z-index: -1;
+        }
+
+        .profile:hover + .tooltiptext {  visibility: visible;} 
+        #first:hover + .tooltiptext2 { visibility: visible;} 
+        #second:hover + .tooltiptext3 { visibility: visible;} 
+        #info:hover + .tooltiptext4 { visibility: visible;} 
+    </style>
+
+    <body>
+        <nav>
+            <a class = "profile">Change user</a>
+            <a class = "active" onclick = "location.href = 'index.php'">Schedule</a>
+            <a onclick = "location.href = 'request.php'">Request status</a>
+            <a href="information.html">Information</a>
+
+            <img class = "profile" src = "Images/icon/student icon.png" style = "width:35px;"><span class="tooltiptext">Change profile account</span>
+            <img class = "active" id = "first" src = "Images/icon/schedule icon.png" onclick = "location.href = 'index.php'"><span class="tooltiptext2">Schedule</span>
+            <img id = "second" src = "Images/icon/request icon.png" onclick = "location.href = 'request.php'"><span class="tooltiptext3">Request status</span>
+            <img id = "info" src = "Images/icon/i icon.png" onclick = "location.href = 'information.html'"><span class="tooltiptext4">Information</span>
+        </nav>
+    </body>
+</html>
